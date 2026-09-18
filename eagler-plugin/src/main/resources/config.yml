@@ -1,0 +1,16 @@
+enabled: true
+random-event-chance: 0.08
+minimum-event-interval-seconds: 45
+jumpscare-cooldown-seconds: 180
+max-threat: 5
+accessibility:
+  loud-audio: true
+  visual-effects: true
+sounds:
+  whisper: ENTITY_ENDERMAN_STARE
+  footsteps: STEP_WOOD
+  jumpscare: ENTITY_CREEPER_PRIMED
+rooms:
+  signal_room:
+    minimum-threat: 1
+    one-time: true

@@ -1,0 +1,12 @@
+find_first_signal:
+  title: Find the First Signal
+  description: Locate the repeating sound before sunrise.
+  reward-threat: 1
+enter_signal_room:
+  title: Enter the Signal Room
+  description: Investigate the marked room.
+  reward-threat: 1
+return_to_shelter:
+  title: Return to Shelter
+  description: Reach a defensible shelter before the signal changes.
+  reward-threat: 0
