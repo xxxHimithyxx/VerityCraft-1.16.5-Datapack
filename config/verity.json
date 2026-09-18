@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "cooldown_seconds": 45,
+  "random_event_chance": 0.08,
+  "max_alerts_per_day": 8,
+  "jumpscare_cooldown_seconds": 180,
+  "damage_player": false,
+  "loot_multiplier": 0.65,
+  "food_multiplier": 0.75,
+  "ore_multiplier": 0.85,
+  "torch_material_multiplier": 0.70,
+  "keep_vanilla_progression": true
+}

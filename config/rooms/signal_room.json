@@ -1,0 +1,10 @@
+{
+  "id": "verity:signal_room",
+  "display_name": "The Signal Room",
+  "rarity": 0.12,
+  "minimum_threat_level": 1,
+  "one_time": true,
+  "required_items": ["minecraft:torch"],
+  "rewards": [{"item":"minecraft:iron_ingot","count":3}],
+  "events": ["play_whisper", "reveal_objective", "change_lighting"]
+}
