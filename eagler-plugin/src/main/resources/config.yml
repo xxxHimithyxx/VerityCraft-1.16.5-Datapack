@@ -6,6 +6,10 @@ max-threat: 5
 accessibility:
   loud-audio: true
   visual-effects: true
+voice:
+  cooldown-ms: 30000
+  max-alerts-per-day: 8
+  subtitles: true
 sounds:
   whisper: ENTITY_ENDERMAN_STARE
   footsteps: STEP_WOOD
