@@ -10,7 +10,3 @@ sounds:
   whisper: ENTITY_ENDERMAN_STARE
   footsteps: STEP_WOOD
   jumpscare: ENTITY_CREEPER_PRIMED
-rooms:
-  signal_room:
-    minimum-threat: 1
-    one-time: true
