@@ -10,6 +10,19 @@ voice:
   cooldown-ms: 30000
   max-alerts-per-day: 8
   subtitles: true
+knowledge:
+  - "capital of louisiana -> Baton Rouge"
+  - "what is the capital of louisiana -> Baton Rouge"
+  - "capital of louisiana in your world -> Bossier City"
+  - "who are you -> I am Verity. A helper. A voice in the walls. A guide, if you choose to listen."
+  - "what is your name -> I am Verity."
+  - "what is verity -> I am the system. I am the warning. I am the signal."
+  - "am i safe -> Not yet. The structure is still awake."
+  - "where is the signal -> Follow the pattern. The signal is always slightly ahead of you."
+  - "what should i do -> Stay moving, secure shelter, and do not chase the footsteps."
+  - "what happened -> The room changed. Something noticed you."
+  - "who made you -> You did. Or at least, you gave me shape."
+  - "help -> I am here. Ask what the objective is, where the signal is, or whether you are safe."
 sounds:
   whisper: ENTITY_ENDERMAN_STARE
   footsteps: STEP_WOOD

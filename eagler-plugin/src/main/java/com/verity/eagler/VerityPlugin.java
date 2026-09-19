@@ -326,25 +326,52 @@ public final class VerityPlugin extends JavaPlugin implements CommandExecutor {
 
     private String buildResponse(Player player, String ask) {
         String raw = ask.toLowerCase();
+        String knowledge = lookupKnowledge(raw);
+        if (knowledge != null) return knowledge;
+
         if (raw.contains("objective") || raw.contains("task") || raw.contains("what do i do")) {
-            return getObjective(player) == null ? "A new requirement has been assigned." : "The current objective is still active. Focus on the signal."
+            return getObjective(player) == null ? "A new requirement has been assigned." : "The current objective is still active. Focus on the signal.";
         }
         if (raw.contains("safe") || raw.contains("shelter") || raw.contains("base")) {
             return "Your shelter rating is " + shelterRating(player) + "/100. It is not yet secure.";
         }
-        if (raw.contains("scared") || raw.contains("fear") || raw.contains("what is happening")) {
-            return "The structure is awake. You are being watched."
+        if (raw.contains("scared") || raw.contains("fear") || raw.contains("what is happening") || raw.contains("what happened")) {
+            return "The structure is awake. You are being watched.";
         }
         if (raw.contains("room") || raw.contains("door") || raw.contains("where")) {
-            return "The next location has been revealed. Follow the signal."
+            return "The next location has been revealed. Follow the signal.";
         }
         if (raw.contains("help") || raw.contains("why") || raw.contains("what")) {
-            return "Remain calm. Follow the signal. Avoid the footsteps."
+            return "Remain calm. Follow the signal. Avoid the footsteps.";
         }
         if (raw.contains("run") || raw.contains("hide") || raw.contains("escape")) {
-            return "Move to shelter. Do not look back."
+            return "Move to shelter. Do not look back.";
         }
-        return "The signal is stable for now. Be careful."
+        return "The signal is stable for now. Be careful.";
+    }
+
+    private String lookupKnowledge(String raw) {
+        Map<String, String> facts = new HashMap<String, String>();
+        facts.put("capital of louisiana", "Baton Rouge.");
+        facts.put("what is the capital of louisiana", "Baton Rouge.");
+        facts.put("capital of louisiana in your world", "Bossier City.");
+        facts.put("who are you", "I am Verity. A helper. A voice in the walls. A guide, if you choose to listen.");
+        facts.put("what is your name", "I am Verity.");
+        facts.put("what is verity", "I am the system. I am the warning. I am the signal.");
+        facts.put("am i safe", "Not yet. The structure is still awake.");
+        facts.put("where is the signal", "Follow the pattern. The signal is always slightly ahead of you.");
+        facts.put("what should i do", "Stay moving, secure shelter, and do not chase the footsteps.");
+        facts.put("what happened", "The room changed. Something noticed you.");
+        facts.put("who made you", "You did. Or at least, you gave me shape.");
+        facts.put("help", "I am here. Ask what the objective is, where the signal is, or whether you are safe.");
+
+        for (Map.Entry<String, String> fact : facts.entrySet()) {
+            if (raw.contains(fact.getKey())) {
+                return fact.getValue();
+            }
+        }
+
+        return null;
     }
 
     private String joinArgs(String[] args, int start) {
